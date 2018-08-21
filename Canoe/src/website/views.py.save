@@ -17,10 +17,9 @@ def index(request):
             subject = form.cleaned_data.get('subject')
             plain_message = form.cleaned_data.get('message')
             from_email = form.cleaned_data.get('email')
-            plain_message = plain_message + "\n\nFrom : " + from_email
+	    plain_message = plain_message + "\n\nFrom : " + from_email
             print(from_email)
-            to = 'jindalmayank78@gmail.com'
-            #send_mail(str(subject), str(plain_message), 'canoeadmin@canoefederationofindia.in', [to])
+            to = 'canoeadmin@canoefederationofindia.in'            #send_mail(str(subject), str(plain_message), 'canoeadmin@canoefederationofindia.in', [to])
             email = EmailMessage(subject, plain_message, to=[to])
             #print(email)
             email.send()
